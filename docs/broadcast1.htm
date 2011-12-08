@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Install Instructions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+	body { font-family:Verdana; font-size:9pt; }
+</style>
+<link href="../styles/defaultStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bodyText">
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td height="25" class="tdBackGrnd"><strong><font size="2">Message Broadcast Screen</font></strong></td>
+  </tr>
+  <tr>
+    <td align="left" class="bodyText">When sending a broadcast you enter the message broadcast screen (as shown below)</td>
+  </tr>
+  <tr>
+    <td align="left" valign="top"><img src="images/25_message_broadcast_main.gif" width="627" height="329"></td>
+  </tr>
+  <tr>
+    <td class="bodyText">The screen is divided into 3 sections<br>      <br>
+      <strong>1.</strong> Select the <a href="groups.htm">group of subscribers</a> (from the current list) you wish to broadcast your message to, if you have not previously created or saved an <a href="groups.htm">groups</a> then this pop-up menu will only contain &quot;All Subscribers&quot; which allows you to broadcast to all current active subscribers on your list.<br>
+      <font color="Red">* Note</font> - if you have the latest Enterprise Version then you also have the ability to require your subscribers to validate their subscription via a double opt-in verification process (they are emailed a confirmation message of there subscription request and asked to click a link containing their unique verification ID in order to fully validate their subscription. If you have this feature enabled (done in the <a href="Listsadmin.htm">Email List Detail/Update Screen</a>) you will only be able to broadcast to subscribers that have had their subscriptions validated via the double opt-in process. If none of your current subscribers have validated their subscription then you will not be able to send a broadcast and you will see a screen similar to the following:<br>
+      <img src="images/25_message_broadcast_main2.gif" width="764" height="338">      <br>
+      Note that there is no &quot;Broadcast Message&quot; button thus you cannot initiate the broadcast when there is 0(zero) subscribers to broadcast to.<br>
+      <br>
+      </td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong>2.</strong> Select the message you wish to broadcast to your selected subscriber group (most recent message is the default selection)</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong>3.</strong> Click the  &quot;Broadcast Message&quot; button to initiate your broadcast<br>
+    <strong>3a.</strong> A new feature is also presented here allowing you to send your broadcast out in batches (this is especially useful for busy/slow CF server and busy SMTP mail servers). When sending a broadcast to a large number of subscribers this will cause the next CF page to take a long time to process (depending on the speed of your CF Server and Mail Server and version of CF Server you are using). Some servers have a very low timeout value set in CF Administrator to help ensure that long running CF pages do not halt the server. To combat this and avoid your page timing out before completing you can process the broadcast in smaller batches of your choosing and set the timeout(pause) value (requires JRE to be installed and enabled on your CF Server) in seconds between each batch. For example you would set the batch value to 100 and the interval to 15 if you wish to send your broadcast in batches of 100 messages at a time with a pause of 15 seconds between each batch being processed by your CF Server and subsequently sent to your SMTP Server.</td>
+  </tr>
+</table>
+<br>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="center" bgcolor="#EEEEEE"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="MessageUpdate.htm">Previous
+    Page</a> | <a href="bounceExceptions.htm">Next Page</a></font></strong></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Install Instructions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+	body { font-family:Verdana; font-size:9pt; }
+</style>
+<link href="../styles/defaultStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bodyText">
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td height="25" class="tdBackGrnd"><strong><font size="2">Installation Steps</font></strong></td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong><font color="#FF0000">1.</font></strong> <font color="#000066"><strong>Create
+          your database</strong></font> on your database server (skip to step
+          2 if you are using the supplied Microsoft Access* database). Simply
+          create a new empty database in either Microsoft SQL Server or MySQL</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong><font color="#FF0000">2.</font></strong> <font color="#000066"><strong>Create
+          an ODBC data source to your database</strong></font>, the DSN
+      name is set to<strong> mail-list</strong> by default and this is defined
+      in the Application.cfm page in the root level of the MailList directory.</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><font color="#FF0000"><strong>2a.</strong></font> Copy
+    the  maillist directory to your web site.</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><font color="#FF0000"><strong>2b.</strong></font> <font color="#000066"><strong>Browse
+      the setup page</strong></font> located in the maillist/setup directory,
+      for example http://www.yourdomain.com/maillist/setup. If you have browsed
+      to this directory you should see the screen below.</td>
+  </tr>
+  <tr>
+    <td><img src="images/25_setup1.gif" alt="Setup screen 1" width="570" height="379"></td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong><font color="#FF0000">3.</font></strong> <font color="#000066"><strong>Choose
+    your database</strong></font>, select your chosen database (currently supported
+    databases are MSSQL, MySQL and Access*)</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong><font color="#FF0000">4.</font></strong> <font color="#000066"><strong>Enter
+          your data source name</strong></font>,
+      this is the name of the data source to your newly created database or to
+          the supplied Access database you created above at step 2 (default is
+          &quot;Mail-List&quot;)</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong><font color="#FF0000">5.</font></strong> <font color="#000066"><strong>Enter
+          the main system administrator login</strong></font>,
+      enter the username you wish (as system administrator) to login with. Please
+          note this login will have full administration rights to the application
+          and all settings. (default: admin) This can be changed later within
+          the application at any time</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong><font color="#FF0000">6.</font></strong> <font color="#000066"><strong>Enter
+          the main system administrator password</strong></font>, enter the password
+          you wish to assign to the username above (default: admin) This can
+          be changed later within the application at any time</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong><font color="#FF0000">7.</font></strong> <font color="#000066"><strong>Select
+          whether you have cffile access</strong></font>,
+      if you are able to utilize cffile on you web server select &quot;Yes&quot;.
+      The point of this step is to update the main &quot;Application.cfm&quot; file
+      to reflect the name of your data source as set in step 4 above.<br>
+          <strong>** If you select NO here as you do onto have access to cffile
+          you must manually update the &quot;Application.cfm&quot; file in at
+          the root level of
+          the maillist directory, open it and update line 4 &lt;cfset DSN = &quot;Mail-List&quot;&gt; with
+          your data source name.</strong></td>
+  </tr>
+  <tr>
+    <td><p class="bodyText">Once you have everything correct press the &quot;Proceed&quot;
+        button. If you have selected to use a database server (either MSSQL or
+        MySQL) then the next screen will report to you the success of creating
+        all the required tables and default data required for the application
+        to run. If any errors are reported in creating any tables you may wish
+        to manually delete all tables in your database and repeat process as
+        there may have been a database issue.</p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" class="adminAddNewTdBackGrnd"><span class="bodyText"><strong>***
+          POST INSTALLATION STEPS ***</strong></span></td>
+  </tr>
+  <tr>
+    <td class="bodyText">Upon successful setup of your database you will be supplied
+      the link to login to the system using the username and password you created
+      above. It is <strong>strongly suggested</strong> you first go to the <a href="adminExtras.htm">Global
+      Settings</a> screen (last option on the side navigation menu) and update
+      all the settings in there as per your specific installation.</td>
+  </tr>
+  <tr>
+    <td class="bodyText"><hr size="1" noshade>
+      * Microsoft Access is provided for testing and development
+      purposes, we strongly suggest not using it in a production environment.
+      We have not
+      stress tested our application using Microsoft Access nor do we offer support
+      using it in a high usage production setting</td>
+  </tr>
+</table>
+<br>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="center" bgcolor="#EEEEEE"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="mainFrame.htm">Previous
+    Page</a> | <a href="admin1.htm">Next Page</a></font></strong></td>
+  </tr>
+</table>
+</body>
+</html>

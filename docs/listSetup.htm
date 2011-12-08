@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+	body { font-family:Verdana; font-size:9pt; };
+	bodyText{ font-family:Verdana; font-size:10pt; }
+</style>
+<link href="../styles/defaultStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td height="20" class="tdBackGrnd"><strong><font size="2">List Setup Screen</font></strong></td>
+  </tr>
+  <tr>
+    <td><strong><img src="images/25_subscription_list_detail.gif" width="697" height="619"></strong></td>
+  </tr>
+  <tr>
+    <td class="bodyText"><p><strong>1. Email List Name</strong> - This is an
+        arbitrary name you give to your list, purely for recording and reference
+        purposes, this is not displayed when your emails are sent from this List.<br>
+      <br>
+      <strong>2. Administrator Group</strong> - This is very important as this
+      is where you assign ownership (log in / administration rights) to this
+      list. So as the administrator (only Administrator can create Administrator
+      Groups) you first go to the Administrator Groups screen and create a new
+      Group for this List, then return here and the list will be available in
+      the Administrator Group select menu to assign ownership of this list to<br>
+      <br>
+      <strong>3. Email List From E-Mail Address</strong> - This is the email
+      address that all messages broadcast from this list will appear to come
+      from (depending on the security measures set up on your mail server you
+      may have to ensure that this address has relay access to the mail server
+      to send mail out via this server)<br>
+      <br>
+      <strong>4. Email List Reply-To E-Mail Address</strong> - This is the (optional)
+      reply-to email address that all messages broadcast from this list will
+      be &quot;replied to&quot; (meaning if someone's clicks reply in their email application
+      to send a reply back to this message the reply will go to this address
+      specified here (this does not affect bounce collection as bounced messages
+      will still return to their originating (from) address<br>      
+      <br>
+      <strong>5. Email List SMTP Mail Server</strong> - This is the SMTP (Outgoing
+      Mail) Server that the system will use to broadcast your messages. This
+      may or may not be the same as the Mail Server you have defined within Coldfusion
+      Administrator - if you only have one mail server then this will be the
+      same.<br>
+      <br>
+      <strong>6. Email List POP Mail Server</strong> - This is the POP (Incoming
+      Mail) Server that the system will use to log in to and retrieve messages
+      that have been sent to or in case of bounced messages returned to this
+      account on the mail server. <u>In most situations this will be the same
+      as the SMTP Server above</u>. This may or may not be the same as the Mail
+      Server you have defined within Coldfusion Administrator - if you only have
+      one mail server then this will be the same. <br>
+      <br>
+      <strong>7. Email List POP Server Login</strong> - This is the account login
+      username for the POP Server above<br>
+      <br>
+      <strong>8. Email List POP Server Password</strong> - This is the account
+      login password for the POP Server above<br>
+      <br>
+      <strong>9. Email List Global Header (optional)</strong> - This is a global
+      header (text version) that you may define for use by all messages on this
+      list. This will be the first thing displayed at the top of every message
+      broadcast out by the system. (Not Required, simply here as a convenience
+      for those wishing to define a default header layout for all messages).
+      Will be used by the text portion of the message<br>
+      <br>
+      <strong>10. Email List Global Footer (optional)</strong> - This is a global
+      footer (text version) that you may define for use by all messages on this
+      list. This will be the last thing displayed at the bottom of every message
+      broadcast out by the system (The default unsubscribe line of text will
+      be displayed below this). (Not Required, simply here as a convenience for
+      those wishing to define a default header layout for all messages) . Will
+      be used by the text portion of the message<br>
+      <br>
+      <strong>11. Email List Global Header HTML (optional)</strong> - This is
+      a global header (HTML version) that you may define for use by all messages
+      on this list. This will be the first thing displayed at the top of every
+      message broadcast out by the system. (Not Required, simply here as a convenience
+      for those wishing to define a default header layout for all messages).
+      Will be used by the HTML portion of the message.<br>
+      <br>
+      <strong>12. Unsubscribe Text Font Face</strong> - At the bottom of every
+      message broadcast is a few lines explaining to the subscriber how to unsubscribe
+      form the List that they have received this message from. When sending a
+      HTML message that you have formatted nicely you may wish to keep this text
+      at the base of your message in keeping with the font face used in the rest
+      of the message. You can easily define this by selecting a default font
+      face here<br>
+      <br>
+      <strong>13. Unsubscribe Text Font Size</strong> - Extending on from the
+      explanation above you can also set the default size of the text in an HTML
+      message with this selection.<strong><br>
+      <br>
+  14. Allow Personalization variables in messages</strong> - You can now add
+  Personalization variables to your HTML messages, you have control over whether
+  you wish the system to process these variables or not. <u><font color="#FF0000">This
+  features is disabled by default as this will cause your broadcasts to take
+  slightly longer to process as a result of enabling this feature, it is recommended
+  to leave this feature disabled if you have no use for it.</font></u><strong><br>
+            </strong><font color="#003366"><strong><br>
+  Currently available variables for Email List Manager 2.5 are:</strong></font></p>
+      <table width="83%" border="1" cellspacing="0" cellpadding="0">
+        <tr bgcolor="#CCCCCC">
+          <td width="29%" height="20" nowrap><strong><font size="2">Personalization
+                Variable</font></strong></td>
+          <td width="71%"><strong><font size="2">Explanation</font></strong></td>
+        </tr>
+        <tr>
+          <td><strong><font size="2">[First Name]</font></strong></td>
+          <td><font size="2">inserts the First name of the recipient into your
+              HTML email</font></td>
+        </tr>
+        <tr>
+          <td><strong><font size="2">[Last Name]</font></strong></td>
+          <td><font size="2">inserts the Last name of the recipient into your
+              HTML email</font></td>
+        </tr>
+        <tr>
+          <td><strong><font size="2">[Email]</font></strong></td>
+          <td><font size="2">inserts the Email Address of the recipient into
+              your HTML email</font></td>
+        </tr>
+        <tr>
+          <td><strong><font size="2">[List]</font></strong></td>
+          <td><font size="2">inserts the List name into your HTML email</font><strong></strong></td>
+        </tr>
+        <tr>
+          <td><strong><font size="2">[Date Long]</font></strong></td>
+          <td><font size="2">inserts the current date (Friday, April 15th, 1996)
+              into your HTML email</font></td>
+        </tr>
+        <tr>
+          <td><strong><font size="2">[Date Med]</font></strong></td>
+          <td><font size="2">inserts the current date (15-Apr-1996) into your
+              HTML email</font></td>
+        </tr>
+        <tr>
+          <td><strong><font size="2">[Date Short]</font></strong></td>
+          <td><font size="2">inserts the current date (4/15/1996) into your HTML
+              email</font></td>
+        </tr>
+      </table>
+      <p><strong>  15. Create click thru added details</strong> - When enabled this feature allows
+  the creation of extended tracking capabilities for your HTML email messages.
+  By default the system tracks all click through's on links within your HTML
+  email message broadcast, when this feature is enabled the actual email address
+  of the subscriber and the number of times that individual subscriber clicked
+  the link is also logged. You will see an additional link in the Click Thru
+  Stats screen [detail] will be beside the click through count and when clicked
+  (if this feature is enabled) will display the email subscribers who have clicked
+  this link.<strong> </strong><u><font color="#FF0000">This features is disabled
+  by default as this will cause your broadcasts to take slightly longer to process
+  as a result of enabling this feature, it is recommended to leave this feature
+  disabled if you have no use for it.</font></u><strong><br>
+                    <br>
+  16. <font color="#990000"><strong>List Administration Group</strong></font></strong> -
+  The System Administrator (Admin login) ONLY can update the Administration Group
+  that has control of a particular list - this refers to individual group administrators
+  only, the main admin can always access all currently active Subscription Lists
+  in the system.<strong> </strong></p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="center" bgcolor="#EEEEEE" class="bodyText"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="Listsadmin.htm">Previous
+            Page</a> | <a href="groups.htm">Next Page</a></font></strong></td>
+  </tr>
+</table>
+<p><u></u></p>
+</body>
+</html>

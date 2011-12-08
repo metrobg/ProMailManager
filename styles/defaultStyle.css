@@ -1,0 +1,206 @@
+.bodyText {
+	font-family: tahoma, verdana, sans-serif;
+	font-size: 11px;
+	color: Black;
+}
+.bodyText a:link{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: Black;
+}
+.bodyText a:hover{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: Black;
+	text-decoration: none;
+}
+.bodyText a:visited{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: Black;
+}
+.bodyText a:active{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: Red;
+}
+.subscribeSuccess {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #006699;
+}
+.subscribeFail {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: Red;
+}
+.subscribeRemove {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FF6600;
+}.tableBackGrnd {
+	background-color: #999999;
+}
+.tdBackGrnd {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	background-image: url(../images/gradient-bar-md-25.gif);
+	color: #FFFFFF;
+}
+.tdAdminOnlyBackGrnd {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	background-image: url(../images/gradient-bar-red-md-25.gif);
+	color: #FFFFFF;
+}
+.tdHeader {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #003366;
+
+}
+.tdHorizDivider {
+	background-color: #666666;
+
+}
+.tdVertDivider {
+	background-color: #999999;
+
+}.adminUpdateSuccessful {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000099;
+	border: thin none #666666;
+	background-color: #CCCCCC;
+
+}
+
+}.adminRemoveSuccessful {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: Red;
+	border: thin none #666666;
+	background-color: #CCCCCC;
+
+}.adminAddNewTdBackGrnd {
+	background-color: #CCCCCC;
+	border: 1px solid #006666;
+
+
+}
+.tdTipsHeader {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #000066;
+
+
+}
+.bodyTextWhite {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.bodyTextWhite a:link{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.bodyTextWhite a:hover{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.bodyTextWhite a:visited{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.bodyTextWhite a:active{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+
+.footerBackGrnd {
+	background-color: #D6D6AD;
+}
+.buttonTestSend {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	color: #FFFFFF;
+	background-color: #006600;
+}
+.copyButton {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #FF3300;
+}.textFields {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	background-color: #DDFFDD;
+	border: 1px solid #009900;
+}
+.reportHeader {
+	font-family: tahoma, verdana, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+.reportText {
+	font-family: tahoma, verdana, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+
+}
+.reportText a:link{
+	font-family: tahoma, verdana, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+}
+.reportText a:hover{
+	font-family: tahoma, verdana, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+	text-decoration: none;
+}
+.reportText a:active{
+	font-family: tahoma, verdana, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+}
+.reportText a:visited{
+	font-family: tahoma, verdana, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+}
+.buttonDelete {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #FF0000;
+}
+.buttonSearch {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #003399;
+}

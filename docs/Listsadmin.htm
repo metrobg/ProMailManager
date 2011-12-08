@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+	body { font-family:Verdana; font-size:9pt; };
+	bodyText{ font-family:Verdana; font-size:10pt; }
+</style>
+<link href="../styles/defaultStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td height="25" class="tdBackGrnd"><strong>View All Lists</strong></td>
+  </tr>
+  <tr>
+    <td height="20" bgcolor="#CCCCCC" class="bodyText"><strong>Main View</strong></td>
+  </tr>
+  <tr>
+    <td class="bodyText"><img src="images/25_subscription_lists.gif" width="697" height="214"></td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong>Subscription List/s [ID]<br>
+    </strong>This is where you define the default settings for your List, information
+    required on this screen is <a href="listSetup.htm">explained in depth here</a><strong> </strong>The
+    [ID] column shows the ID of this list (this number is used when you setup
+    subscription forms on your web site and make a call to the subscribeEngine.cfm
+    custom tag.<br>
+    <strong><br>
+Current Messages<br>
+</strong>This column displays the number of current messages and a link [ View
+] to click to go directly to view these messages<br>
+<br><strong>Create New Message<br>
+</strong>Clicking the<img src="images/icon-new-message.gif" width="17" height="18"> [New] link will lead to the New Message creation screen
+to create a new message for broadcasting to this Subscription List<br>
+<br>
+<strong>Active Subscribers<br>
+</strong>Clicking the <img src="images/icon-users-active.gif" width="16" height="16" align="absbottom"> icon
+will take you to the Subscribers administration screen, where you can view/update/remove/add/import
+current subscribers to this list. The number beside this icon is the current
+number of subscribers currently subscribed to this list<br>
+* This column may also have both of the following icons - they have the following
+actions associated with them<br>
+<img src="../images/deleteIcon_Red.gif" width="12" height="15" align="absbottom">When
+your list has bounced subscribers flagged this icon will appear and clicking
+it will remove all bounced subscribers regardless of bounce reason.<br>
+<img src="../images/deleteIcon_blue.gif" width="12" height="15" align="absbottom">When
+your list has bounced subscribers flagged this icon will also appear and it provides
+you more selective power in cleaning up your list of these bounced subscribers.
+Clicking this icon will open a new window with the ability to selectively delete
+subscribers that are flagged as bounced in your list. Once this window is open
+full instructions for its use are provided.<br>
+<br><strong>Removed Subscribers<br>
+</strong>Clicking the <img src="images/icon-users-removed.gif" width="16" height="16" align="absbottom"> icon
+will take you to the Removed Subscribers administration screen. When a subscriber
+un subscribes form your list they are removed form the active subscribers table
+and subsequently from receiving any further messages that are broadcast. As an
+added feature these subscribers are still maintained in a removed subscribers
+list that you can refer to. The number beside this icon is the current number
+of subscribers currently removed from this list<br>
+<br><strong>Groups<br>
+</strong><img src="images/icon-groups.gif" width="21" height="19" align="absbottom">Clicking
+this icon will take you to the new subscriber groups screen, this screen is explained
+further here. The subscribers groups provides a new powerful feature enabling
+you to create a sub-group or subset of your existing subscription list, essentially
+enabling you if you wish to send out a broadcast to a subset of your subscriber
+list should you wish instead of being restricted to sending your broadcast to
+your entire subscriber list only. Thesis provides you with many powerful options
+for use.<br>
+<br>
+<strong>Get Mail (*PLEASE NOTE THIS MAY TAKE A WHILE TO COMPLETE*)<br>
+</strong>Clicking the <img src="images/logo-maillist-sm.gif" width="33" height="21"> icon
+will cause the system to log into your Pop mail server with the login details
+you have defined in your <a href="listSetup.htm">List Setup screen</a> After
+successfully logging into the system will perform a list of sophisticated functions.<br>
+These include retrieving all messages on the system and then searching these
+message for &quot;<font color="#FF0000">unsubscribe</font>&quot; or &quot;<font color="#FF0000">subscribe</font>&quot; requests.
+In addition to this the system will also perform a search on these messages and
+determine what messages have bounced back to the system form a previous broadcast
+mailing. If a bounced message is found then the subscriber's email address is
+purged from the email and matched to the subscriber list for a match, if it is
+found to be a current subscriber then this subscriber will be flagged in the
+system as have been bounced (message undeliverable). When viewing the subscriber
+list it will be signified by the <img src="images/bouncedBomb.gif" width="20" height="17" align="absbottom">icon.
+The wonderful work that the system performs does not stop there, it also logs
+the date and time of the bounce in a bounce log so if you choose not to remove
+the subscriber from the active list on an initial bounce you may quickly view
+on subsequent message broadcasts if this same email address bounced again. The
+log is maintained and updated each time you click the Get Mail icon. <br>
+* It is important to note that a lot of work is going on here to achieve the
+above actions and depending on how much mail may be on the Server at the time
+you run this function and the resources you have available on the Coldfusion
+Server running this application this process may take a while to complete. Do
+not close the window until the process has completed. Once completed the mail
+is <strong>deleted</strong> from the pop server<br>
+<br>
+    </td>
+  </tr>
+  <tr>
+    <td height="20" bgcolor="#CCCCCC" class="bodyText"><strong>Extended View
+        (choose yellow drop down arrow to reveal additional list options) </strong></td>
+  </tr>
+  <tr>
+    <td><img src="images/25_subscription_lists_dropd.gif" width="919" height="319"></td>
+  </tr>
+  <tr>
+    <td class="bodyText"><strong>Auto Responder Messages<br>
+</strong>Clicking the <strong><img src="images/icon-new-message.gif" width="17" height="18" align="absbottom"></strong>[New]
+link will take you to a screen similiar to the create new message screen where
+you
+can create an auto responder message for your list. Auto Responder messages (if
+present) are sent to subscribers who subscribe or unsubscribe successfully from
+your list via any web page on your site that activates the subscription process
+by using the supplied &quot;subscribeEngine.cfm&quot; custom tag. You can create a message
+for subscription requests and a separate message for un-subscribe requests.<br>
+<strong><br>
+Manual Pop Mail Box Check<br>
+</strong>This is added here for convenience to perform a manual pop mail box
+check for this list, this duplicates the same operation as the icon in the main
+view does<br>
+<strong>      <br>
+Create Mailbox Check Scheduled Task<br>
+</strong>Click the <img src="../images/icon-hd-schedule-inactive.gif" width="19" height="20" align="absbottom">icon
+to create a scheduled task on your ColdFusion Server to check your mailbox regularly
+for bounces, subscribe and unsubscribe requests. Once you have clicked this icon
+it will change to <img src="../images/icon-hd-schedule.gif" width="19" height="20" align="absbottom">signifying
+that this task is now active and there is no need to click this again, also it
+will not be necessary to click the manual get mail icon (<img src="../images/logo-maillist-sm.gif" width="33" height="21" align="absbottom">).
+To de-activate this task at any time simply click this icon again, it will be
+deactivated and reflect thesis change by showing the inactive icon once again.<br>
+<strong>      <br>
+      Export Subscribers<br>
+</strong>Click the <img src="../images/icon-save.gif" width="17" height="18" align="absbottom">icon
+to export this lists subscribers entire list. A (.csv) file will be created and
+once
+ready you will be provided with a download link to download the file. Fields
+that are
+exported are Email Address, First Name, Last Name, Date Subscribed to List.<br>
+<font color="Red">* Note on linux installations</font> the admin/export directory
+must have appropriate read/write permissions set otherwise this function will
+fail as it uses cffile
+to write the file to this directory for downloading.<br>
+<br><strong>Import a list of  Subscribers<br>
+</strong>Click the <img src="images/importIconGrn.gif" width="12" height="15" align="absbottom"> icon
+to import a group of subscribers into this list, currently supported import methods
+are pasting the entire list of subscribers (one per line) into the provided text
+box on the import screen or importing a pre-formatted .csv file. (the file must
+be formatted into exact columns a sample is provided for download to view appropriate
+format)<br>
+<font color="Red">* Note on linux installations</font> the admin/import directory
+must have appropriate read permissions set otherwise this function will
+fail as it uses cffile
+to read the uploaded file, also cffile will fail at attempting to upload/write
+the file to the server for reading.<br><br>
+<strong>List Administrators<br>
+    </strong>Clicking the [View] link will lead to the administration screen
+    for adding/viewing/updating/removing users who have rights to access this
+    administration
+section for your Subscription List<br>
+<br><strong>Delete All Current Subscribers<br>
+</strong>Clicking the <img src="images/subscribers_delete_all.jpg" width="23" height="20"> icon
+will <font color="Red">permanently delete</font> all subscribers from your list
+- be advised this action CANNOT BE REVERSED and all subscribers for this list
+will be lost!</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p><u><br>
+  <br>
+</u></p>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="center" bgcolor="#EEEEEE" class="bodyText"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="admin1.htm">Previous
+            Page</a> | <a href="listSetup.htm">Next Page</a></font></strong></td>
+  </tr>
+</table>
+<p><u></u></p>
+</body>
+</html>

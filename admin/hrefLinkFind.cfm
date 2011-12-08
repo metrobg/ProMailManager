@@ -1,0 +1,1 @@
+<cfset vHrefFound = ReFindNoCase('href="[^"]+"', vHTMLMessage, startPos, "True")>
