@@ -116,7 +116,7 @@ inconvenience
 <cfif IsDefined("mailServerInfo.EmailListGlobalHeaderHTML") AND Len(mailServerInfo.EmailListGlobalHeaderHTML) neq 0>#mailServerInfo.EmailListGlobalHeaderHTML#<br></cfif>#vHTMLMessageExtraFinal#<br>
 <cfif IsDefined("mailServerInfo.EmailListGlobalFooterHTML") AND Len(mailServerInfo.EmailListGlobalFooterHTML) neq 0>#mailServerInfo.EmailListGlobalFooterHTML#</cfif>
 <br><font face="#mailServerInfo.EmailMessageGlobalFontFace#" size="#mailServerInfo.EmailMessageGlobalFontSize#"><br>
-If you wish to be taken off this list, visit the link provided below. You will be taken off automatically. <a href="#globals.siteServerAddress#unsubscribe.cfm?vEmailAddress=#EmailAddress#&vEmailList=#lid#&act=subr">unsubscribe</a>  
+If you wish to be removed from this list, visit the link provided below. You will be taken off automatically. <a href="http://www.heritagemfg.com/unsubscribe.cfm?vEmailAddress=#EmailAddress#&vEmailList=#lid#&act=subr">unsubscribe</a>  
 </font>
 </body>
 </html>

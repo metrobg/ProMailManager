@@ -75,8 +75,10 @@ WHERE EmailListID = <cfqueryparam cfsqltype="cf_sql_integer" value="#listnum#">
 	
 	<!--- Check For Subscribe in Subject --->
 	<cfelseif qGetMail.Subject CONTAINS 'subscribe'>
-		<cf_emailaddressfind messagebody="#HTMLEditFormat(qGetMail.from)#">
-		<cfset emailFound = Mid(HTMLEditFormat(qGetMail.from), vEmail.Pos[1], vEmail.Len[1])>
+    <cflog file="ptTest" type="information" text="subscribe found list number #listnum# ">
+		<!--- <cf_emailaddressfind messagebody="#HTMLEditFormat(qGetMail.from)#"> 
+		<cfset emailFound = Mid(HTMLEditFormat(qGetMail.from), vEmail.Pos[1], vEmail.Len[1])>--->
+           <cflog file="ptTest" type="information" text="address located #qGetMail.from#">
 		<cf_subscribeengine 
 			vemailaddress=#emailFound# 
 			vemaillist=#listnum# 	

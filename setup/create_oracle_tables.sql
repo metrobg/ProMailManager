@@ -1,4 +1,10 @@
  CREATE  SEQUENCE  "MAIL_SEQ"  MINVALUE 10 MAXVALUE 999999999 INCREMENT BY 1 START WITH 10 NOCACHE  ORDER  NOCYCLE ;
+
+CREATE SEQUENCE "EMAIL_GROUP_SEQ" MINVALUE 10 MAXVALUE 9999999999 INCREMENT BY 1 START WITH 10 NOCACHE  ORDER NOCYCLE ;
+
+CREATE SEQUENCE "EMAIL_ADDRESS_SEQ" MINVALUE 1000 MAXVALUE 9999999999 INCREMENT BY 1 START WITH 1000 NOCACHE  ORDER NOCYCLE ;
+
+
  CREATE TABLE "ADMIN" 
    (	"ADMINID" NUMBER(5,0), 
 		"ADMINLEVELID" NUMBER(5,0), 
@@ -285,7 +291,7 @@ ALTER TABLE  email_addresses ADD CONSTRAINT  email_addresses_PK  PRIMARY KEY (Em
      
 CREATE OR REPLACE TRIGGER  email_addresses_TRIGGER  before
   INSERT ON  email_addresses FOR EACH row BEGIN
-  SELECT mail_seq.nextval INTO :new.EmailID FROM dual;
+  SELECT EMAIL_ADDRESS_SEQ.nextval INTO :new.EmailID FROM dual;
 END;
 /
 ALTER TRIGGER  email_addresses_TRIGGER ENABLE;
@@ -331,6 +337,7 @@ END;
 /
 ALTER TRIGGER email_addresses_rmvd_TRIGGER ENABLE;
  
+
  
 CREATE TABLE email_list_messages (
 	MessageID  NUMBER(9),
@@ -338,12 +345,12 @@ CREATE TABLE email_list_messages (
 	MessageListID  NUMBER(9) NOT NULL ,
 	MessageName varchar (75) NULL ,
 	MessageSubject varchar (75) NULL ,
-	MessageTXT varchar2 (4000) NULL ,
-	MessageHTML varchar2 (4000) NULL ,
+	MessageTXT CLOB ,
+	MessageHTML CLOB ,
 	MessageMultiPart NUMBER(1) DEFAULT '1' NULL ,
 	ShowEditor NUMBER(1) DEFAULT '1' NULL,
 	MessageCreateDate DATE NULL,
-	MessageWithRedirects varchar2 (4000) NULL
+	MessageWithRedirects CLOBS
 );
 
 
@@ -378,7 +385,7 @@ ALTER TABLE email_list_groups ADD CONSTRAINT email_list_groups_PK  PRIMARY KEY (
      
 CREATE OR REPLACE TRIGGER  email_list_groups_TRIGGER  before
   INSERT ON  email_list_groups FOR EACH row BEGIN
-  SELECT mail_seq.nextval INTO :new.GroupID FROM dual;
+  SELECT Email_Group_SEQ.nextval INTO :new.GroupID FROM dual;
 END;
 /
 ALTER TRIGGER  email_list_groups_TRIGGER ENABLE;
@@ -497,6 +504,7 @@ CREATE TABLE email_lists (
 	EmailListWebRoot varchar (250) DEFAULT 'http://localhost/maillist' NULL ,
 	EmailListReplyToEmail varchar (100) NULL ,
 	EmailListFromEmail varchar (100) NOT NULL ,
+	FROM_NAME varchar (100) NOT NULL ,
 	EmailListSMTPServer varchar (100) NOT NULL ,
 	EmailListPOPServer varchar (100) NULL ,
 	EmailListPOPLogin varchar (75) NOT NULL ,

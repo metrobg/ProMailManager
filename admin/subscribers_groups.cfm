@@ -192,21 +192,23 @@ function popUpWindow(URLStr, scrollbar, resizable, left, top, width, height)
         <!--- Open save group request --->
 		 <cflock name="lGroups" type="exclusive" timeout="30">
 		  <cfquery name="qSaveGroup" datasource="#DSN#">
-          INSERT INTO email_list_groups (GroupDesc, ListID, subFilter, subSearchTxt)
-		  VALUES ('#GroupDesc#', #lid#, '#subFilter#', '#subSearchTxt#')
+          INSERT INTO email_list_groups (GroupDesc, ListID, subFilter, subSearchTxt,GROUPCREATEDATE)
+		  VALUES ('#GroupDesc#', #lid#, '#subFilter#', '#subSearchTxt#',SYSDATE)
           </cfquery>
 		  <cfquery name="qGroupID" datasource="#DSN#">
 		  	SELECT MAX(GroupID) AS nGroupID FROM email_list_groups
 		  </cfquery>
-		  <cfquery name="qUpdateGroupTempID" datasource="#DSN#">
+		 <!---  <cfquery name="qUpdateGroupTempID" datasource="#DSN#">
 		  	UPDATE email_list_groups_tempholder
 			SET tempGroupID = #qGroupID.nGroupID#
 			WHERE recID = 1
-		  </cfquery>
+		  </cfquery> --->
+          
+          
 		  <cfquery name="qAddGroupMembers" datasource="#DSN#">
 			INSERT INTO email_list_groups_members (GMEmailID, GMGroupID)
-				SELECT email_addresses.EmailID, email_list_groups_tempholder.tempGroupID
-				FROM email_addresses, email_list_groups_tempholder
+				SELECT email_addresses.EmailID, #qGroupID.nGroupID#
+				FROM email_addresses 
 				WHERE (email_addresses.IncludeInBroadcast = 1)
 	      </cfquery>
 		 </cflock> 
@@ -256,15 +258,8 @@ function popUpWindow(URLStr, scrollbar, resizable, left, top, width, height)
 		</cfoutput>
 		<tr align="left">
           <td height="25" colspan="15" bgcolor="#E7E7CF" class="bodyText">Search criteria:<br>
-            <input name="subSearchTxt" type="text" id="subSearchTxt" size="25" maxlength="75" class="bodyText">
-			<select name="subSearchOp1" id="subSearchOp1" class="bodyText">
-            	<option value="contains">Contains</option>
-				<option value="begins">Begins With</option>
-				<option value="ends">Ends With</option>
-				<option value="equal">Equals</option>
-				<option value="not">Does not equal</option>
-			</select>
-			<select name="subFilter" id="subFilter" class="bodyText">
+            <!--- <input name="subSearchTxt" type="text" id="subSearchTxt" size="25" maxlength="75" class="bodyText"> --->
+		 <select name="subFilter" id="subFilter" class="bodyText">
             	<option value="All">All Subscribers</option>
 				<option value="City">City</option>
 				<option value="State">State</option>
@@ -281,21 +276,25 @@ function popUpWindow(URLStr, scrollbar, resizable, left, top, width, height)
 				<option value="Custom5"><cfif Len(globals.Custom5Name) neq 0>#globals.Custom5Name#<cfelse>Custom Field 5</cfif></option>
 				</cfoutput>
 			</select>
+        
+        	<select name="subSearchOp1" id="subSearchOp1" class="bodyText">
+            	<option value="contains">Contains</option>
+				<option value="begins">Begins With</option>
+				<option value="ends">Ends With</option>
+				<option value="equal">Equals</option>
+				<option value="not">Does not equal</option>
+			</select>
+            
+             <input name="subSearchTxt" type="text" id="subSearchTxt" size="25" maxlength="75" class="bodyText">
+			
 			<br>
 			<select name="subSearchOp2" id="subSearchOp2" class="bodyText">
             	<option value="AND" selected>AND</option>
 				<option value="or">OR</option>
 			</select>
 			<br>
-			<input name="subSearchTxt2" type="text" id="subSearchTxt2" size="25" maxlength="75" class="bodyText">
-            <select name="subSearchOp3" id="subSearchOp3" class="bodyText">
-              <option value="contains">Contains</option>
-              <option value="begins">Begins With</option>
-              <option value="ends">Ends With</option>
-              <option value="equal">Equals</option>
-              <option value="not">Does not equal</option>
-            </select>
-            <select name="subFilter2" id="subFilter2" class="bodyText">
+			<!--- <input name="subSearchTxt2" type="text" id="subSearchTxt2" size="25" maxlength="75" class="bodyText"> --->
+              <select name="subFilter2" id="subFilter2" class="bodyText">
               <option value="All">All Subscribers</option>
               <option value="City">City</option>
               <option value="State">State</option>
@@ -342,6 +341,16 @@ function popUpWindow(URLStr, scrollbar, resizable, left, top, width, height)
                 </option>
               </cfoutput>
             </select>
+            <select name="subSearchOp3" id="subSearchOp3" class="bodyText">
+              <option value="contains">Contains</option>
+              <option value="begins">Begins With</option>
+              <option value="ends">Ends With</option>
+              <option value="equal">Equals</option>
+              <option value="not">Does not equal</option>
+            </select>
+            <input name="subSearchTxt2" type="text" id="subSearchTxt2" size="25" maxlength="75" class="bodyText">
+            
+          
             <br>
             <cfoutput query="qAvailableLists">
 				<input type="checkbox" name="ListID" value="#EmailListID#" <cfif qAvailableLists.EmailListID eq lid>checked</cfif>>#EmailListDesc#

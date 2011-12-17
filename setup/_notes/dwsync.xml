@@ -9,7 +9,7 @@
 <file name="index.cfm" server="milo.metrobg.com//home/public/cf/mailManager/" local="129661294190000000" remote="129661294190000000" />
 <file name="create_oracle_tables.cfm" server="milo.metrobg.com//home/public/cf/mailManager/" local="129661328470000000" remote="129661328470000000" />
 <file name="create_mssql_tables.cfm" server="milo.metrobg.com//home/public/cf/mailManager/" local="129661072040000000" remote="129661072040000000" />
-<file name="create_oracle_tables.sql" server="milo.metrobg.com//home/public/cf/mailManager/" local="129661928630000000" remote="129661928630000000" />
+<file name="create_oracle_tables.sql" server="milo.metrobg.com//home/public/cf/mailManager/" local="129685562630000000" remote="129685562630000000" />
 <file name="drop_all_tables.zip" server="milo.metrobg.com//home/public/cf/mailManager/" local="129661072040000000" remote="129661072040000000" />
 <file name="Application.cfm" server="milo.metrobg.com//home/public/cf/mailManager/" local="129661271340000000" remote="129661271340000000" />
 <file name="create_mysql_tables.cfm" server="milo.metrobg.com//home/public/cf/mailManager/" local="129661072040000000" remote="129661072040000000" />

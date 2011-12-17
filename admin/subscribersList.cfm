@@ -7,6 +7,7 @@ Web Address:               http://www.adminprotools.com
 Contact Information:       http://www.adminprotools.com/contact
 Date Created:              January 4, 2003
 Date Last Modified:        NOvember 27, 2003
+MBG Modified 12/11/11
 =====================================================================
  -->
 <cfinclude template="globals/validateLogin.cfm">
@@ -40,15 +41,15 @@ function popUpWindow(URLStr, scrollbar, resizable, left, top, width, height)
         <cfif IsDefined("bAdd")  AND Len(Trim(EmailAddress)) neq 0>
           <cfmodule template="adminpro_emailValidate.cfm" email="#EmailAddress#">
           <cfquery name="checkEmailExists" datasource="#DSN#">
-          SELECT * FROM email_addresses WHERE EmailAddress =
-          <cfqueryparam cfsqltype="cf_sql_varchar" value="#EmailAddress#">
+          SELECT * FROM email_addresses WHERE lower(EmailAddress) =
+          <cfqueryparam cfsqltype="cf_sql_varchar" value="#lcase(EmailAddress)#">
           AND ListID =
           <cfqueryparam cfsqltype="cf_sql_integer" value="#lid#">
           </cfquery>
 		  <cfif Error eq 0 AND checkEmailExists.RecordCount eq 0>
             <cfquery name="addSubscriber" datasource="#DSN#">
             INSERT INTO email_addresses (ListID, EmailAddress, FirstName, LastName, City, State, ZipCode, Country, PhoneNumber, CellNumber, Custom1, Custom2, Custom3, Custom4, Custom5, DateAdded)
-	  		VALUES (#lid#, '#EmailAddress#', '#FirstName#', '#LastName#', '#City#', '#State#', '#ZipCode#', '#Country#', '#PhoneNumber#', '#CellNumber#', '#Custom1#', '#Custom2#', '#Custom3#', '#Custom4#', '#Custom5#', <cfqueryparam cfsqltype="cf_sql_timestamp" value="#now()#">)
+	  		VALUES (#lid#, '#lcase(EmailAddress)#', '#FirstName#', '#LastName#', '#City#', '#State#', '#ZipCode#', '#Country#', '#PhoneNumber#', '#CellNumber#', '#Custom1#', '#Custom2#', '#Custom3#', '#Custom4#', '#Custom5#', <cfqueryparam cfsqltype="cf_sql_timestamp" value="#now()#">)
             </cfquery>
             <tr>
               <td height="18" colspan="15" align="center"><span class="adminUpdateSuccessful">The
@@ -57,7 +58,7 @@ function popUpWindow(URLStr, scrollbar, resizable, left, top, width, height)
           </cfif>
           <cfelseif IsDefined("bUpdate")  AND Len(Trim(EmailAddress)) neq 0>
           <cfquery name="updateSubscriber" datasource="#DSN#">
-			  UPDATE email_addresses SET EmailAddress = '#EmailAddress#', 
+			  UPDATE email_addresses SET EmailAddress = '#lcase(EmailAddress)#', 
 			  FirstName = '#FirstName#', 
 			  LastName = '#LastName#', 
 			  City = '#City#', 
@@ -100,7 +101,7 @@ function popUpWindow(URLStr, scrollbar, resizable, left, top, width, height)
 			  <cfif checkEmailExists.RecordCount eq 0>
 				<cfquery name="addSubscriber" datasource="#DSN#">
 				INSERT INTO email_addresses (ListID, EmailAddress, FirstName, LastName, City, State, ZipCode, Country, PhoneNumber, CellNumber, Custom1, Custom2, Custom3, Custom4, Custom5)
-	  			VALUES (#lid#, '#qSubscriber.EmailAddress#', '#qSubscriber.FirstName#', '#qSubscriber.LastName#', '#qSubscriber.City#', '#qSubscriber.State#', '#qSubscriber.ZipCode#', '#qSubscriber.Country#', '#qSubscriber.PhoneNumber#', '#qSubscriber.CellNumber#', '#qSubscriber.Custom1#', '#qSubscriber.Custom2#', '#qSubscriber.Custom3#', '#qSubscriber.Custom4#', '#qSubscriber.Custom5#')
+	  			VALUES (#lid#, '#lcase(qSubscriber.EmailAddress)#', '#qSubscriber.FirstName#', '#qSubscriber.LastName#', '#qSubscriber.City#', '#qSubscriber.State#', '#qSubscriber.ZipCode#', '#qSubscriber.Country#', '#qSubscriber.PhoneNumber#', '#qSubscriber.CellNumber#', '#qSubscriber.Custom1#', '#qSubscriber.Custom2#', '#qSubscriber.Custom3#', '#qSubscriber.Custom4#', '#qSubscriber.Custom5#')
 			  </cfquery>
             <tr>
               <td height="18" colspan="15" align="center"><span class="adminUpdateSuccessful">The
@@ -145,7 +146,7 @@ function popUpWindow(URLStr, scrollbar, resizable, left, top, width, height)
           </cfif>
           WHERE ListID = #lid#
           <cfif IsDefined("bEmailSearch")>
-            AND EmailAddress LIKE '%#email#%'
+            AND lower(EmailAddress) LIKE '%#lcase(email)#%'
           </cfif>
           <cfif IsDefined("list") AND list eq "active">
             ORDER BY ExceededMailQuota DESC, Bounced DESC, EmailAddress

@@ -67,6 +67,7 @@ act (subr) = subscribe remove from FORM
 
 <cfif ( Len(ATTRIBUTES.act) eq 4 ) AND ( ATTRIBUTES.act eq "suba" )>
 <!-- ================Subscribe From FORM ACTION====================== -->
+     <cflog file="ptTest" type="information" text="subscribe tag">
 		<cfif Len(ATTRIBUTES.vEmailList) neq 0>
 			<cfif Len(Trim(ATTRIBUTES.vEmailAddress)) gte 6>
 				<cfquery name="checkEmailList" datasource="#ATTRIBUTES.DSN#">
@@ -84,7 +85,8 @@ act (subr) = subscribe remove from FORM
                             AND ListID = <cfqueryparam cfsqltype="cf_sql_integer" value="#ATTRIBUTES.vEmailList#">
 				    </cfquery>
 				  	<!--- Insert Email into subscription table --->
-					<cfif checkEmailList.RecordCount eq 0>	
+					<cfif checkEmailList.RecordCount eq 0>
+                         	
 					 <cflock name="addEmail" timeout="30">
 				      <cfquery name="addEmail" datasource="#ATTRIBUTES.DSN#">
 				      INSERT INTO email_addresses (ListID, EmailAddress, <cfif IsDefined("ATTRIBUTES.FirstName")>FirstName,</cfif> <cfif IsDefined("ATTRIBUTES.LastName")>LastName,</cfif> <cfif IsDefined("ATTRIBUTES.City")>City,</cfif> <cfif IsDefined("ATTRIBUTES.State")>State,</cfif> <cfif IsDefined("ATTRIBUTES.ZipCode")>ZipCode,</cfif> <cfif IsDefined("ATTRIBUTES.Phone")>PhoneNumber,</cfif> <cfif IsDefined("ATTRIBUTES.Country")>Country,</cfif> verificationID, Custom1, Custom2, Custom3, Custom4, Custom5)
@@ -219,6 +221,7 @@ act (subr) = subscribe remove from FORM
 
 <cfelseif ( Len(ATTRIBUTES.act) eq 4 ) AND ( ATTRIBUTES.act eq "subr" )>
 <!-- ================UnSubscribe From FORM ACTION==================== -->
+
 		<cfif Len(ATTRIBUTES.vEmailList) neq 0>
 			<cfif Len(Trim(ATTRIBUTES.vEmailAddress)) gte 6>
 				<!--- Check Email is unique to this list --->
